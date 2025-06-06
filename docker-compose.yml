@@ -12,6 +12,8 @@ services:
     command: npm run dev
     depends_on:
       - backend
+    environment:
+      - CHOKIDAER_USEPOLLING=true
     env_file:
       - .env
 
