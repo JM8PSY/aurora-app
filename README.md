@@ -25,11 +25,8 @@ docker-compose up --build
 
 ---
 
-## 開発のポイント
-
-* ソースコードはコンテナにマウントされているため編集即反映
-* FastAPIは `uvicorn --reload` でホットリロード対応
-* Viteの開発サーバーもホットリロード対応済み
+## 環境変数
+- OpenWeatherのAPIキー
 
 ---
 

@@ -12,6 +12,8 @@ services:
     command: npm run dev
     depends_on:
       - backend
+    env_file:
+      - .env
 
   backend:
     build: ./backend
@@ -25,6 +27,8 @@ services:
       - db
     environment:
       - DATABASE_URL=postgresql://postgres:password@db:5432/aurora
+    env_file:
+      - .env
 
   db:
     image: postgres:17
