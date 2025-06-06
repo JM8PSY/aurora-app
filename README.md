@@ -1,37 +1,75 @@
+````markdown
 # Aurora Observation Support System
 
-低緯度オーロラの観測を支援するWebアプリです。気象情報、地磁気、雲量、光害などをもとに観測可能性を評価します。
+このプロジェクトは、低緯度オーロラ観測支援システムです。FastAPI（バックエンド）、React + Vite（フロントエンド）、PostgreSQL（DB）をDocker Composeで統合し、ホットリロード対応の開発環境を構築しています。
 
-## 構成
+---
 
-- フロントエンド：React + Vite
-- バックエンド：Node.js + Express
-- データベース：PostgreSQL
-- インフラ：Docker / docker-compose
+## 動作環境
 
-## セットアップ
+- Docker
+- Docker Compose
+
+---
+
+## 起動方法
 
 ```bash
-git clone https://github.com/jm8psy/aurora-app.git
+git clone https://github.com/your-repo/aurora-app.git
 cd aurora-app
-docker compose up --build
-```
+docker-compose up --build
+````
 
-- フロントエンド： http://localhost:3000  
-- バックエンド： http://localhost:5000
+* バックエンドAPI: [http://localhost:5000](http://localhost:5000)
+* フロントエンド: [http://localhost:3000](http://localhost:3000)
 
-## ディレクトリ構成
+---
+
+## 開発のポイント
+
+* ソースコードはコンテナにマウントされているため編集即反映
+* FastAPIは `uvicorn --reload` でホットリロード対応
+* Viteの開発サーバーもホットリロード対応済み
+
+---
+
+## ディレクトリ構成例
 
 ```
 aurora-app/
-├── backend/         # Node.js API
-│   └── Dockerfile
-├── frontend/        # Reactアプリ
-│   └── Dockerfile
-├── docker-compose.yml
-└── README.md
+├─ backend/
+│  ├─ app/
+│  │  └─ main.py
+│  ├─ Dockerfile
+│  └─ requirements.txt
+├─ frontend/
+│  ├─ src/
+│  ├─ Dockerfile
+│  ├─ package.json
+│  └─ vite.config.js
+└─ docker-compose.yml
 ```
 
-## ライセンス
+---
 
-MIT
+## 技術スタック
+
+* バックエンド: Python, FastAPI, Uvicorn
+* フロントエンド: React, Vite
+* データベース: PostgreSQL
+* コンテナ管理: Docker, Docker Compose
+
+---
+
+## 注意事項
+
+* PostgreSQLデータはボリュームで永続化
+* WindowsのDockerでのマウント設定に注意
+
+---
+
+## 問い合わせ
+
+ご質問はIssueかPRでお気軽にどうぞ。
+
+```
