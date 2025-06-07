@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aurora App</title>
+</head>
+<body>
+  <h1>K-Index</h1>
+  <% if (kIndex) { %>
+    <p>Latest: <%= kIndex.latest.time_tag %> → <%= kIndex.latest.k_index %></p>
+  <% } else { %>
+    <p>データ取得に失敗しました</p>
+  <% } %>
+</body>
+</html>
